@@ -13,6 +13,7 @@ public struct Array2D<T>
     public Array2D(int width, int height)
     {
         _data = new T[width * height];
+
         _width = width;
         _height = height;
     }
@@ -27,20 +28,20 @@ public struct Array2D<T>
 
     public override string ToString()
     {
-        var s = String.Empty;
+        var output = String.Empty;
 
         for (int i = 0; i < _width; i++)
         {
-            s += "\n";
+            output += "\n";
             
             for (int x = 0; x < _height; x++)
             {
-                s += $"{_data[GetIndex(i,x)]},";
+                output += $"{_data[GetIndex(i,x)]},";
             }
 
         }
 
-        return s;
+        return output;
     }
 }
  
