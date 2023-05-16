@@ -9,6 +9,7 @@ public struct Array2D<T>
 
     public int Width => _width;
     public int Height => _height;
+    public int Count => _width * _height;
 
     public Array2D(int width, int height)
     {
