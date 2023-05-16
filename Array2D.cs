@@ -28,7 +28,7 @@ public struct Array2D<T>
 
     public override string ToString()
     {
-        var output = String.Empty;
+        var output = string.Empty;
 
         for (int i = 0; i < _width; i++)
         {
@@ -38,7 +38,6 @@ public struct Array2D<T>
             {
                 output += $"{_data[GetIndex(i,x)]},";
             }
-
         }
 
         return output;
