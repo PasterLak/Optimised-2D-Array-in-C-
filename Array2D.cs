@@ -13,6 +13,9 @@ public struct Array2D<T>
 
     public Array2D(int width, int height)
     {
+        if (width <= 0 || height <= 0)
+            throw new ArgumentException("Width and height must be positive values.");
+
         _data = new T[width * height];
 
         _width = width;
@@ -29,19 +32,19 @@ public struct Array2D<T>
 
     public override string ToString()
     {
-        var output = string.Empty;
+        var sb = new StringBuilder();
 
         for (int i = 0; i < _width; i++)
         {
-            output += "\n";
-            
+            sb.Append("\n");
+
             for (int x = 0; x < _height; x++)
             {
-                output += $"{_data[GetIndex(i,x)]},";
+                sb.Append($"{_data[GetIndex(i, x)]},");
             }
         }
 
-        return output;
+        return sb.ToString();
     }
 }
  
